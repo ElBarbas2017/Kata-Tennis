@@ -24,7 +24,7 @@ module Tenis.Modelo {
         }
 
         private esPartidoFinalizado(jugador: number): bool {
-            // Si se ha llegado al total de sets del partido o bien un jugador ha ganado un número superior de sets superior a la mitad del total (2/3, 3/5)
+            // Si se ha llegado al total de sets del partido o bien un jugador ha ganado un nÃºmero superior de sets superior a la mitad del total (2/3, 3/5)
             return (this.sets.length == this.datos.numeroSets) || (this.contador[jugador] > this.datos.numeroSets / 2);
         }
     }

@@ -26,7 +26,7 @@ module Tenis.Controlador {
         private juegoActual: Modelo.Juego;
         private servicioActual: number;
 
-        // Interface público
+        // Interface pÃºblico
         empiezaPartido(datos: Modelo.DatosPartido): void {
             this.partido = new Modelo.Partido();
             this.partido.datos = datos;
@@ -55,7 +55,7 @@ module Tenis.Controlador {
             return this.partido;
         }
 
-        // Implementación privada
+        // ImplementacÃ³n privada
         private nuevoSet() {
             this.setActual = new Modelo.Set();
 

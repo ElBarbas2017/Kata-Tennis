@@ -67,7 +67,7 @@ var Tenis;
                 this.situarEstado(EstadoPartido.Finalizado);
             };
             Principal.prototype.suspenderPartido = function () {
-                if(confirm('¿Estás seguro de suspender el partido?')) {
+                if(confirm('Â¿EstÃ¡s seguro de suspender el partido?')) {
                     $('#finalizado').html('Partido suspendido');
                     $('#ganador').html('');
                     this.situarEstado(EstadoPartido.Finalizado);
