@@ -31,7 +31,7 @@ module Tenis.Vista {
             this.tenis = tenis;
         }
 
-        // Implementación interface
+        // ImplementaciÃ³n interface
         private nuevoPartido(datos: Tenis.Modelo.DatosPartido): void {
             this.situarEstado(EstadoPartido.Jugando);
 
@@ -78,7 +78,7 @@ module Tenis.Vista {
         }
 
         private suspenderPartido() {
-            if (confirm('¿Estás seguro de suspender el partido?')) {
+            if (confirm('Â¿EstÃ¡s seguro de suspender el partido?')) {
                 $('#finalizado').html('Partido suspendido');
                 $('#ganador').html('');
 
@@ -96,7 +96,7 @@ module Tenis.Vista {
             if (estado == EstadoPartido.Finalizado) this.setVisible('.despuesPartido',true);
         }
 
-        // Implementación privada
+        // ImplementaciÃ³n privada
         private inicializarVista() {
             var me = this;
 
