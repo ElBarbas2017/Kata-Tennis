@@ -16,7 +16,7 @@ module Tenis.Modelo {
         contador: number[] = [0, 0];
         ganador: number;
 
-        incrementa(jugador: number): void {
+        public incrementa(jugador: number): void {
             this.contador[jugador]++;
 
             if (this.esPartidoFinalizado(jugador))
@@ -36,7 +36,7 @@ module Tenis.Modelo {
         ganador: number;
         servicio: number;
 
-        incrementa(jugador: number): void {
+        public incrementa(jugador: number): void {
             var adversario = (jugador + 1) % 2;
             if (this.tieBreak) {
                 this.puntos[jugador]++;
@@ -67,7 +67,7 @@ module Tenis.Modelo {
             }
         }
 
-        esTieBreakFinalizado(jugador: number, adversario: number): bool {
+        private esTieBreakFinalizado(jugador: number, adversario: number): bool {
             return this.puntos[jugador] > 6 && (this.puntos[jugador] - this.puntos[adversario]) >= 2;
         }
     }
