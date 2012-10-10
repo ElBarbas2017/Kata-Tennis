@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Kata Tenis</title>
+
+        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="span7 offset2">
+                    <h1>Kata Tenis</h1>
+
+                    <hr />
+
+                    <div class="btn-toolbar">
+                            <a href="#nuevoPartido" class="btn btn-primary previoPartido despuesPartido" data-toggle="modal">Empezar partido</a>  
+                            <a id="suspenderPartido" class="btn btn-danger durantePartido hide">Partido suspendido</a>  
+                    </div>
+                    
+                    <table id="marcador" class="table table-bordered durantePartido despuesPartido hide">
+                        <thead>
+                            <tr>
+                                <td width="200"></td>
+                                <td width="20">1</td>
+                                <td width="20">2</td>
+                                <td width="20">3</td>
+                                <td width="20" class="sets5">4</td>
+                                <td width="20" class="sets5">5</td>
+                                <td></td>
+                                <td width="80"><span class="label label-warning hide" id="tieBreak">Tie break</span></td>
+                                <td width="80"></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="jug1">
+                                <td>
+                                    <h3 id="jugador"></h3>
+                                    
+                                </td>
+                                <td><h3 id="juego1" class="puntos"></h3></td>
+                                <td><h3 id="juego2" class="puntos"></h3></td>
+                                <td><h3 id="juego3" class="puntos"></h3></td>
+                                <td class="sets5"><h3 id="juego4" class="puntos"></h3></td>
+                                <td class="sets5"><h3 id="juego5" class="puntos"></h3></td>
+                                <td>
+                                    <div class="pull-right">
+                                        <span class="label label-success hide" id="servicio">Servicio</span><br />
+                                        <span class="label label-info hide" id="ventaja">Ventaja</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <h3 id="juegoActual" class="puntos"></h3>
+                               </td>
+                                <td>
+                                    <h3><button class="btn btn-primary durantePartido" id="puntoBoton">Punto</button></h3>
+                                </td>
+                            </tr>
+                            <tr id="jug2">
+                                <td>
+                                    <h3 id="jugador"></h3>
+                                </td>
+                                <td><h3 id="juego1" class="puntos"></h3></td>
+                                <td><h3 id="juego2" class="puntos"></h3></td>
+                                <td><h3 id="juego3" class="puntos"></h3></td>
+                                <td class="sets5"><h3 id="juego4" class="puntos"></h3></td>
+                                <td class="sets5"><h3 id="juego5" class="puntos"></h3></td>
+                                <td>
+                                    <div class="pull-right">
+                                        <span class="label label-success hide" id="servicio">Servicio</span><br />
+                                        <span class="label label-info hide" id="ventaja">Ventaja</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <h3 id="juegoActual" class="puntos"></h3>
+                               </td>
+                                <td>
+                                    <h3><button class="btn btn-primary durantePartido" id="puntoBoton">Punto</button></h3>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="hero-unit despuesPartido hide">
+                        <h1 id="finalizado"></h1>
+                        <h2 id="ganador"></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal hide fade" id="nuevoPartido">
+            <form class="form-horizontal" id="formEmpezar">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>Empezar partido</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="control-group">
+                        <label class="control-label" for="nombreJugador1">Jugador 1</label>
+                        <div class="controls">
+                            <input type="text" name="nombreJugador1" value="Rafa Nadal"
+                                data-val="true" 
+                                data-val-required="Introduce el nombre del jugador"
+                                ><span class="help-block field-validation-valid" data-valmsg-for="nombreJugador1" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="nombreJugador2">Jugador 2</label>
+                        <div class="controls">
+                            <input type="text" name="nombreJugador2" value="Roger Federer"
+                                data-val="true" 
+                                data-val-required="Introduce el nombre del jugador"
+                                ><span class="help-block field-validation-valid" data-valmsg-for="nombreJugador2" data-valmsg-replace="true"></span>
+ 
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputPassword">Servicio inicial</label>
+                        <div class="controls">
+                            <label class="radio">
+                                <input type="radio" name="servicio" checked="checked" value="0" > Jugador 1
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="servicio" value="1" > Jugador 2
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputPassword">Número de sets</label>
+                        <div class="controls">
+                            <select name="sets">
+                                <option value="3">Mejor de 3</option>
+                                <option value="5">Mejor de 5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group hide para5Sets">
+                        <div class="controls">
+                            <label class="checkbox">
+                                <input type="checkbox" name="tiebreak" > Tie break en el 5º set
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn" data-dismiss="modal" >Cancelar</a>
+                    <input type="submit" class="btn btn-primary" value="Empezar" />
+                </div>
+            </form>
+        </div>
+
+        <script src="http://twitter.github.com/bootstrap/assets/js/jquery.js" type="text/javascript"></script>
+        <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js" type="text/javascript"></script>
+
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.js" type="text/javascript"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.validate.unobtrusive.js" type="text/javascript"></script>
+
+        <script src="TenisModelo.js"></script>
+        <script src="TenisVista.js"></script>
+        <script src="TenisControlador.js"></script>
+    </body>
+</html>
